@@ -48,38 +48,38 @@ Our model takes raw images as an input, so we used CNNs (Convolutional Nural Net
 ##### Full-Color Model Sammary:
 
 | Layer (type)   | Output Shape | Param # |
-    | ------------- | ------------- | ------------- |
-    |  conv2d_1 (Conv2D)  | (None, 148, 148, 32)| 896  |
-    | max_pooling2d_1 (MaxPooling2)  | (None, 74, 74, 32)  | 0  |
-	| conv2d_2 (Conv2D)  | (None, 72, 72, 64)  | 18496  |
-	| max_pooling2d_2 (MaxPooling2)  | (None, 36, 36, 64)  | 0  |
-	| conv2d_3 (Conv2D)  | (None, 34, 34, 128)  | 73856  |
-	| max_pooling2d_3 (MaxPooling2)  | (None, 17, 17, 128)  | 0  |
-	| conv2d_4 (Conv2D)  | (None, 15, 15, 256)  | 295168  |
-	| max_pooling2d_4 (MaxPooling2)  | (None, 7, 7, 256)  | 0  |
-	| flatten_1 (Flatten)  | (None, 12544)  | 0  |
-	| dropout_1 (Dropout)  | (None, 12544)  | 0  |
-	| dense_1 (Dense)  | (None, 256)  | 3211520  |
-	| dense_2 (Dense)  | (None, 6)  | 1542  |
+| ------------- | ------------- | ------------- |
+|  conv2d_1 (Conv2D)  | (None, 148, 148, 32)| 896  |
+| max_pooling2d_1 (MaxPooling2)  | (None, 74, 74, 32)  | 0  |
+| conv2d_2 (Conv2D)  | (None, 72, 72, 64)  | 18496  |
+| max_pooling2d_2 (MaxPooling2)  | (None, 36, 36, 64)  | 0  |
+| conv2d_3 (Conv2D)  | (None, 34, 34, 128)  | 73856  |
+| max_pooling2d_3 (MaxPooling2)  | (None, 17, 17, 128)  | 0  |
+| conv2d_4 (Conv2D)  | (None, 15, 15, 256)  | 295168  |
+| max_pooling2d_4 (MaxPooling2)  | (None, 7, 7, 256)  | 0  |
+| flatten_1 (Flatten)  | (None, 12544)  | 0  |
+| dropout_1 (Dropout)  | (None, 12544)  | 0  |
+| dense_1 (Dense)  | (None, 256)  | 3211520  |
+| dense_2 (Dense)  | (None, 6)  | 1542  |
 
 
 
 ##### Gray-Scale Model Sammary:
 
 | Layer (type)   | Output Shape | Param # |
-    | ------------- | ------------- | ------------- |
-    |  conv2d_1 (Conv2D)  | (None, 148, 148, 32)| 320  |
-    | max_pooling2d_1 (MaxPooling2)  | (None, 74, 74, 32)  | 0  |
-	| conv2d_2 (Conv2D)  | (None, 72, 72, 64)  | 18496  |
-	| max_pooling2d_2 (MaxPooling2)  | (None, 36, 36, 64)  | 0  |
-	| conv2d_3 (Conv2D)  | (None, 34, 34, 128)  | 73856  |
-	| max_pooling2d_3 (MaxPooling2)  | (None, 17, 17, 128)  | 0  |
-	| conv2d_4 (Conv2D)  | (None, 15, 15, 256)  | 295168  |
-	| max_pooling2d_4 (MaxPooling2)  | (None, 7, 7, 256)  | 0  |
-	| flatten_1 (Flatten)  | (None, 12544)  | 0  |
-	| dropout_1 (Dropout)  | (None, 12544)  | 0  |
-	| dense_1 (Dense)  | (None, 128)  | 1605760  |
-	| dense_2 (Dense)  | (None, 6)  | 774  |
+| ------------- | ------------- | ------------- |
+|  conv2d_1 (Conv2D)  | (None, 148, 148, 32)| 320  |
+| max_pooling2d_1 (MaxPooling2)  | (None, 74, 74, 32)  | 0  |
+| conv2d_2 (Conv2D)  | (None, 72, 72, 64)  | 18496  |
+| max_pooling2d_2 (MaxPooling2)  | (None, 36, 36, 64)  | 0  |
+| conv2d_3 (Conv2D)  | (None, 34, 34, 128)  | 73856  |
+| max_pooling2d_3 (MaxPooling2)  | (None, 17, 17, 128)  | 0  |
+| conv2d_4 (Conv2D)  | (None, 15, 15, 256)  | 295168  |
+| max_pooling2d_4 (MaxPooling2)  | (None, 7, 7, 256)  | 0  |
+| flatten_1 (Flatten)  | (None, 12544)  | 0  |
+| dropout_1 (Dropout)  | (None, 12544)  | 0  |
+| dense_1 (Dense)  | (None, 128)  | 1605760  |
+| dense_2 (Dense)  | (None, 6)  | 774  |
 
 
 
@@ -95,23 +95,23 @@ To see how the model works and what exactly learns we choose to visualiz interme
 
 As showen in Figures 3 and 4, the full-color model learned how to identefy the diseas spots, the gray-scale method in the other hand did not learn how to locate the disease, but insted learned only the shape of the leaf and some patterns in the background.
 
-![](/figures/figure-2.jpg)
+![](/figures/figure-2.JPG)
 > Figure 2: Input image
 
-![](/figures/figure-3.jpg)
+![](/figures/figure-3.png)
 > Figure 3: Full-Color intermediate  activations
 
-![](/figures/figure-4.jpg)
+![](/figures/figure-4.png)
 > Figure 4: Gray-Scale intermediate  activations
 
 ### Results:
 -------------
 We are so proud to show that out best model (Full-Color) achieved an accuracy of 99.84% on a held-out test set, and second best model (Gray-Scale) achieved an accuracy of 95.54%,  Figures 5 and 6 show how the models accuracy progress over epochs.
 
-![](/figures/figure-5.jpg)
+![](/figures/figure-5.png)
 > Figure 5: Full-Color Training and Validation Accuracy
 
-![](/figures/figure-6.jpg)
+![](/figures/figure-6.png)
 > Figure 6: Gray-Scale Training and Validation Accuracy
 
 
